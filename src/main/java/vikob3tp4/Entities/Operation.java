@@ -6,6 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "OPERATION")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Operation {
 
     @Id

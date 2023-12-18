@@ -28,6 +28,11 @@ public class Main {
         Operation ope = new Operation(LocalDateTime.now(), 120.00, "virement check", com);
         em.persist(ope);
 
+        Adresse adr2 = new Adresse(8,"rue des P", 44000, "Nantes");
+        Client cli2 = new Client("Ab", "Cd", LocalDate.now(), adr2, ban);
+        em.persist(cli2);
+
+
         et.commit();
 
         em.close();

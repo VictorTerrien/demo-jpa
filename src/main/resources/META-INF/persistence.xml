@@ -23,6 +23,9 @@
     <class>vikob3tp4.Entities.Operation</class>
     <class>vikob3tp4.Entities.Client</class>
     <class>vikob3tp4.Entities.Adresse</class>
+    <class>vikob3tp4.Entities.LivretA</class>
+    <class>vikob3tp4.Entities.AssuranceVie</class>
+    <class>vikob3tp4.Entities.Virement</class>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
