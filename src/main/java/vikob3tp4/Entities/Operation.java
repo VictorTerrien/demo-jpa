@@ -1,11 +1,11 @@
 package vikob3tp4.Entities;
 
-import vikob3.Entities.Client;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+@Entity
+@Table(name = "OPERATION")
 public class Operation {
 
     @Id
@@ -21,17 +21,19 @@ public class Operation {
     @Column(name = "MOTIF", length = 255, nullable = false)
     private String motif;
 
-    @ManyToMany
-    @JoinTable(name = "OPERATIONCOMPTE",
-            joinColumns = @JoinColumn(name = "ID_COM", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "ID_CLI", referencedColumnName = "ID")
-    )
-    private Set<Compte> comptes;
+    @ManyToOne
+    @JoinColumn(name = "ID_COMPTE")
+    private Compte compte;
 
-    public Operation(LocalDateTime date, Double montant, String motif) {
+    public Operation(LocalDateTime date, Double montant, String motif, Compte compte) {
         this.date = date;
         this.montant = montant;
         this.motif = motif;
+        this.compte = compte;
+    }
+
+    public Operation() {
+
     }
 
     public LocalDateTime getDate() {

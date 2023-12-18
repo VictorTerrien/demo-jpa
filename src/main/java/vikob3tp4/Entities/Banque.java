@@ -1,12 +1,10 @@
 package vikob3tp4.Entities;
 
-import vikob3.Entities.Client;
-import vikob3.Entities.Emprunt;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Set;
 
+@Entity
+@Table(name = "BANQUE")
 public class Banque {
 
     @Id
@@ -21,6 +19,10 @@ public class Banque {
 
     public Banque(String nom) {
         this.nom = nom;
+    }
+
+    public Banque() {
+
     }
 
     public String getNom() {

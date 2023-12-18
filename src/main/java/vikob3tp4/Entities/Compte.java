@@ -1,11 +1,11 @@
 package vikob3tp4.Entities;
 
-import vikob3.Entities.Client;
-import vikob3.Entities.Emprunt;
 
 import javax.persistence.*;
 import java.util.Set;
 
+@Entity
+@Table(name = "COMPTE")
 public class Compte {
 
     @Id
@@ -25,12 +25,16 @@ public class Compte {
     )
     private Set<Client> clients;
 
-    @ManyToMany(mappedBy = "comptes")
+    @OneToMany(mappedBy = "compte")
     private Set<Operation> operations;
 
     public Compte(String numero, Double solde) {
         this.numero = numero;
         this.solde = solde;
+    }
+
+    public Compte() {
+
     }
 
     public String getNumero() {

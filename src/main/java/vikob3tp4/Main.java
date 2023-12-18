@@ -1,6 +1,5 @@
 package vikob3tp4;
 
-
 import vikob3tp4.Entities.Adresse;
 import vikob3tp4.Entities.Banque;
 import vikob3tp4.Entities.Client;
@@ -12,7 +11,6 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("banque");
-        System.out.println(emf);
         EntityManager em = emf.createEntityManager();
 
         /*EntityTransaction et = em.getTransaction();

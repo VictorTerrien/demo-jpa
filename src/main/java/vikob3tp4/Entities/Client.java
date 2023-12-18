@@ -1,11 +1,11 @@
 package vikob3tp4.Entities;
 
-import vikob3.Entities.Livre;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
+@Entity
+@Table(name = "CLIENT")
 public class Client {
 
     @Id
@@ -39,8 +39,8 @@ public class Client {
         this.banque = banque;
     }
 
-    public String getNom() {
-        return nom;
+    public Client() {
+
     }
 
     public void setNom(String nom) {
