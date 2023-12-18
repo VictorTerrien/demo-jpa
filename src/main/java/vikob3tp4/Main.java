@@ -1,33 +1,34 @@
 package vikob3tp4;
 
-import vikob3tp4.Entities.Adresse;
-import vikob3tp4.Entities.Banque;
-import vikob3tp4.Entities.Client;
-import vikob3tp4.Entities.Compte;
+import vikob3tp4.Entities.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("banque");
         EntityManager em = emf.createEntityManager();
 
-        /*EntityTransaction et = em.getTransaction();
+        EntityTransaction et = em.getTransaction();
         et.begin();
 
         Adresse adr = new Adresse(4,"chemin des Avettes", 44240, "La Chapelle sur Erdre");
         Banque ban = new Banque("VikoBanque");
         em.persist(ban);
 
-        Client cli = new Client( "Terrien", "Victor", LocalDate.now(), adr, b);
+        Client cli = new Client( "Terrien", "Victor", LocalDate.now(), adr, ban);
         em.persist(cli);
-        // System.out.println(c.getId());
 
+        Compte com = new Compte("uihisbfuh", 12000.00, Set.of(cli));
+        em.persist(com);
 
-        Compte com = new Compte("uihisbfuh", 12000.00);
-        em.persist(com);*/
+        Operation ope = new Operation(LocalDateTime.now(), 120.00, "virement check", com);
+        em.persist(ope);
 
+        et.commit();
 
         em.close();
         emf.close();

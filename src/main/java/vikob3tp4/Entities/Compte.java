@@ -28,9 +28,10 @@ public class Compte {
     @OneToMany(mappedBy = "compte")
     private Set<Operation> operations;
 
-    public Compte(String numero, Double solde) {
+    public Compte(String numero, Double solde, Set<Client> clients) {
         this.numero = numero;
         this.solde = solde;
+        this.clients = clients;
     }
 
     public Compte() {
