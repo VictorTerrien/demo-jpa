@@ -5,10 +5,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "VIREMENT")
-@DiscriminatorColumn(name = "ID")
+@DiscriminatorValue("Virement")
 public class Virement extends Operation {
 
-    @Column(name="BENEFICIAIRE",length = 255,nullable = false)
+    @Column(name="BENEFICIAIRE",length = 255,nullable = true)
     private String beneficiaire;
 
     public Virement(LocalDateTime date, Double montant, String motif, Compte compte, String beneficiaire) {

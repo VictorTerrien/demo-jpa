@@ -7,6 +7,7 @@ import java.util.Set;
 @Entity
 @Table(name = "OPERATION")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TYPE")
 public class Operation {
 
     @Id
